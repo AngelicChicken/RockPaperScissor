@@ -15,8 +15,22 @@ function getComputerChoice(){
     }
 }
 
-
 // get user choice
+function getHumanChoice(){
+    let humanChoice = prompt("Choose Rock/paper/scissor");
+
+    if(humanChoice.toLowerCase() === "rock"){
+        return "rock"
+    } if(humanChoice.toLowerCase() === "paper"){
+        return "paper"
+    } if(humanChoice.toLowerCase() === "scissor"){
+        return "scissor"
+    } else {
+        alert("please choose between rock/paper/scissor!")
+    }
+}
+
+
 // make rock lose to paper
 // make paper lose to scissor
 // make scisor lose to rock
