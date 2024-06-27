@@ -70,12 +70,12 @@ function playGame(){
 
     let i = 0;
 
-    while(i <=4){
+    // while(i <=4){
         playRound();
         console.log("computer score " + computerScore);
         console.log("your score " + humanScore);
         i++;
-    }
+    // }
 }
 
 playGame();
