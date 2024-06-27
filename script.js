@@ -71,8 +71,6 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () =>{
-        console.log(button.id);
-        console.log(typeof button.id);
         playRound(`${button.id}`);
     })
 });
