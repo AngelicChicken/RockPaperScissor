@@ -45,21 +45,27 @@ function playRound(choice){
     // make scisor lose to rock
     if(humanChoice === "rock" && computerChoice === "paper"){
         computerScore += 1;
+        computerScoreView.textContent = `Computer Score: ${computerScore}`;
         console.log("You lose! paper beats rock");
     } if(computerChoice === "rock" && humanChoice === "paper"){
         humanScore += 1;
+        humanScoreView.textContent = `Your Score: ${humanScore}`;
         console.log("You win! paper beats rock");
     } if(computerChoice === "paper" && humanChoice === "scissor"){
         humanScore += 1;
+        humanScoreView.textContent = `Your Score: ${humanScore}`;
         console.log("You win! scissor beats paper");
     } if(computerChoice === "scissor" && humanChoice === "paper"){
         computerScore += 1;
+        computerScoreView.textContent = `Computer Score: ${computerScore}`;
         console.log("You lose! scissor beats paper");
     } if(computerChoice === "rock" && humanChoice === "scissor"){
         computerScore += 1;
+        computerScoreView.textContent = `Computer Score: ${computerScore}`;
         console.log("You lose! rock beats scissor");
     } if(computerChoice === "scissor" && humanChoice === "rock"){
         humanScore += 1;
+        humanScoreView.textContent = `Your Score: ${humanScore}`;
         console.log("You win! rock beats scissor");
     } if((computerChoice === "scissor" && humanChoice === "scissor") || (computerChoice === "paper" && humanChoice === "paper") || (computerChoice === "rock" && humanChoice === "rock") ){
         console.log("draw!");
@@ -74,3 +80,8 @@ buttons.forEach((button) => {
         playRound(`${button.id}`);
     })
 });
+
+//show human and computer score
+const humanScoreView = document.querySelector("#humanScore");
+const computerScoreView = document.querySelector("#computerScore");
+
