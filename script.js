@@ -29,7 +29,7 @@ function getHumanChoice(humanChoice){
 }
 
 
-    // track score
+// track score
 let humanScore = 0;
 let computerScore = 0;
 
@@ -37,8 +37,8 @@ function playRound(choice){
     let humanChoice = choice;
     let computerChoice = getComputerChoice();
 
-    console.log("you choose " + humanChoice);
-    console.log("computer choose " + computerChoice);
+    humanChoiceView.textContent = `you choose  ${humanChoice}`;
+    computerChoiceView.textContent = `computer choose  ${computerChoice}`;
 
     // make rock lose to paper
     // make paper lose to scissor
@@ -46,29 +46,29 @@ function playRound(choice){
     if(humanChoice === "rock" && computerChoice === "paper"){
         computerScore += 1;
         computerScoreView.textContent = `Computer Score: ${computerScore}`;
-        console.log("You lose! paper beats rock");
+        result.textContent = "You lose! paper beats rock";
     } if(computerChoice === "rock" && humanChoice === "paper"){
         humanScore += 1;
         humanScoreView.textContent = `Your Score: ${humanScore}`;
-        console.log("You win! paper beats rock");
+        result.textContent = "You win! paper beats rock";
     } if(computerChoice === "paper" && humanChoice === "scissor"){
         humanScore += 1;
         humanScoreView.textContent = `Your Score: ${humanScore}`;
-        console.log("You win! scissor beats paper");
+        result.textContent = "You win! scissor beats paper";
     } if(computerChoice === "scissor" && humanChoice === "paper"){
         computerScore += 1;
         computerScoreView.textContent = `Computer Score: ${computerScore}`;
-        console.log("You lose! scissor beats paper");
+        result.textContent = "You lose! scissor beats paper";
     } if(computerChoice === "rock" && humanChoice === "scissor"){
         computerScore += 1;
         computerScoreView.textContent = `Computer Score: ${computerScore}`;
-        console.log("You lose! rock beats scissor");
+        result.textContent = "You lose! rock beats scissor";
     } if(computerChoice === "scissor" && humanChoice === "rock"){
         humanScore += 1;
         humanScoreView.textContent = `Your Score: ${humanScore}`;
-        console.log("You win! rock beats scissor");
+        result.textContent = "You win! rock beats scissor";
     } if((computerChoice === "scissor" && humanChoice === "scissor") || (computerChoice === "paper" && humanChoice === "paper") || (computerChoice === "rock" && humanChoice === "rock") ){
-        console.log("draw!");
+        result.textContent = "draw!";
     }
 }   
 
@@ -81,7 +81,12 @@ buttons.forEach((button) => {
     })
 });
 
-//show human and computer score
+//link human and computer score
 const humanScoreView = document.querySelector("#humanScore");
 const computerScoreView = document.querySelector("#computerScore");
+
+//link result and computerChoice
+const computerChoiceView = document.querySelector("#computerChoice");
+const humanChoiceView = document.querySelector("#humanChoice");
+const result = document.querySelector("#result");
 
