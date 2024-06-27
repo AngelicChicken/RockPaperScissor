@@ -70,6 +70,21 @@ function playRound(choice){
     } if((computerChoice === "scissor" && humanChoice === "scissor") || (computerChoice === "paper" && humanChoice === "paper") || (computerChoice === "rock" && humanChoice === "rock") ){
         result.textContent = "draw!";
     }
+
+    if(humanScore === 5 || computerScore === 5){
+        result.textContent = '';
+        humanChoiceView.textContent = '';
+        computerChoiceView.textContent = '';
+        computerScore = 0;
+        humanScore = 0;
+        computerScoreView.textContent = `Computer Score: ${computerScore}`;
+        humanScoreView.textContent = `Your Score: ${humanScore}`;
+        if(humanScore === 5){
+            alert("You win congrats!")
+        } else {
+            alert("Computer win.")
+        }
+    }
 }   
 
 //link button to javascript
